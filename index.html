@@ -1,66 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    }
-    .container {
-        display: flex;
-        flex-direction: column;
-        width: 300px;
-        padding: 20px;
-        background-color: #f2f2f2;
-        border-radius: 10px;
-      }
-      input[type="text"] {
-        width: 100%;
-        height: 2rem;
-        margin-bottom: 10px;
-      }
-      button {
-        width: 100%;
-        height: 2rem;
-        background-color: #4CAF50;
-        color: white;
-        border: none;
-        cursor: pointer;
-        border-radius: 5px;
-      }
-
-  </style>
-  <body>
-    <div class="container">
-      <div class="inputHere">
-        <p>GitHub Profile Viewer</p>
-        <input
-          type="text"
-          name=""
-          id="username"
-          placeholder="Enter username here"
-        />
-        <button id="search-btn" onclick="fetchData()">Get Profile</button>
-      </div>
-      <div class="profile-container">
-        <img src="" alt="" id="avatar">
-        <h2 id="name"></h2>
-        <p id="bio"></p>
-        <h3>Followers: <span id="followers"></span></h3>
-        <h3>Following: <span id="following"></span></h3>
-        <h3>Public Repos: <span id="publicRepos"></span></h3>
-        <a href="" id="profile-link" target="_blank">View GitHub Profile</a>
-      </div>
-      <div class="error-message" hidden></div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitHub User Profile Viewer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>GitHub Profile Viewer</h1>
+    <div class="search-box">
+      <input type="text" id="username" placeholder="Enter GitHub username" />
+      <button id="search-btn">Search</button>
     </div>
-  </body>
+    <div id="profile-container" class="hidden">
+      <img id="avatar" alt="User Avatar" />
+      <h2 id="name"></h2>
+      <p id="bio"></p>
+      <p><strong>Followers:</strong> <span id="followers"></span></p>
+      <p><strong>Following:</strong> <span id="following"></span></p>
+      <p><strong>Repositories:</strong> <span id="repos"></span></p>
+      <a id="profile-link" href="#" target="_blank">View GitHub Profile</a>
+    </div>
+    <div id="error-message" class="hidden"></div>
+  </div>
   <script src="script.js"></script>
+</body>
 </html>
